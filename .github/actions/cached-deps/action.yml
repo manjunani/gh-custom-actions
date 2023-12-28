@@ -1,0 +1,14 @@
+name: Cache Dependencies
+description: This Action Helps in Caching the dependencies if there are no changes in package-lock.json if not it install the respective dependencies
+runs:
+  using: composite
+  steps:
+    - name: Cache dependencies
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
