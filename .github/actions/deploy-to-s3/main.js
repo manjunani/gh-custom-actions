@@ -16,6 +16,8 @@ function run() {
   //   exec.exec(
   //     `aws s3 sync ${destinationFolder} ${s3Uri} --region ${bucketRegion}`
   //   );
+  const wesbiteUrl = `http://${bucketName}.s3-website-${bucketRegion}.amazonaws.com`;
+  core.setOutput('website-url', wesbiteUrl);
 }
 
 run();

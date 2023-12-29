@@ -11,6 +11,9 @@ inputs:
   destination-folder:
     description: Destination Folder where the Code needs to be saved
     required: true
+outputs:
+  website-url:
+   description: The URL of the deployed website
 runs:
   using: 'node16'
   main: 'main.js'
