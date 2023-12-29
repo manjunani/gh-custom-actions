@@ -73,3 +73,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Run JavaScript Custom action
         uses: ./.github/actions/deploy-to-s3
+        # env:
+        #   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+        #   AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        with:
+          bucket-name: sample-bucket
+          # bucketRegion: us-east-2
+          destination-folder: /dist

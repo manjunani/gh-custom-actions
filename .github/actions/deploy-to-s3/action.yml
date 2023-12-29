@@ -1,5 +1,16 @@
 name: Deploy to S3
 description: An Action to deploy to S3
+inputs:
+  bucket-name:
+    description: Name of the S3 Bukcet
+    required: true
+  bucketRegion:
+    description: Region of the S3 Bukcet
+    required: false
+    default: 'us-east-1'
+  destination-folder:
+    description: Destination Folder where the Code needs to be saved
+    required: true
 runs:
   using: 'node16'
   main: 'main.js'
